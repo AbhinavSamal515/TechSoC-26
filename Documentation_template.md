@@ -1,4 +1,4 @@
-## Problem Understanding
+## Understanding the Problem
 **What the problem is asking:** 
 The Problem asks us to primarily **manage the cargo system** by substituting as many of it's failed systems as possible , which includes an **approval** check to keep the weight under limit along with several other functions such as finding out the **average weight, sorting the shipments ,searching containers** and many more , all done using **weight as a primary identifying factor** .
 
