@@ -5,14 +5,15 @@ int main()
     int n;double total=0,temp=0;double c;
     cout << "Enter Maximum Capacity of the Port : ";cin >> c;cout << endl;
     cout << "Enter Number of Containers : ";cin >> n;cout << endl;
-    double x[n];
+    double x[n];//Double Array to store the container weights
     for(int i=0;i<n;i++)
     {
         cout << "Enter the weight of Container " << i+1 << " : ";cin >> x[i];cout << endl;
-        total += x[i];
+        total += x[i];//Input and total calculation is done simultaenously
     }
     cout << endl;
     cout << "Average Weight of Containers : " << total/n << endl;
+    //Using Bubble Sort Method to sort the array in ascending order
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<n-i-1;j++)
@@ -23,12 +24,14 @@ int main()
             }
         }
     }
+    //My Feature : Infinite loop to constantly run funtions on one input with an instant exit key !!!
     while(true){
     cout << "1.Shipment Eqnuiry" << endl << "2.Container Sorting" << endl << "3.Search for Container" << endl << "4.Find the nth heaviest container " << endl << "5.Exit" << endl;
     cout << endl ;cout << "Enter your choice : ";int in=0;cin >> in;cout << endl;
     switch(in)
     {
         case 1:
+            //Utilises pre-sorted array 
         cout << "Lightest Container : " << x[0] << endl;
     cout << "Heaviest Container : " << x[n-1] << endl;
     cout << "Classification  :" << ((total>(int)200)?"Heavy":"Light") << endl;
@@ -36,6 +39,7 @@ int main()
     cout << "Loading Status : " << ((total<c)?"PASS":"FAIL") << endl;cout << endl;cout << "Sorted Containers : ";
     break;
     case 2 :
+        //Prints pre-sorted array
     cout << "Sorted Containers : ";
     for (int i=0;i<n;i++)
     {
@@ -45,6 +49,7 @@ int main()
     case 3 :
     {
     int f=0;
+        //Using Binary Search in sorted array to find given element
     cout << "Enter the weight of the container to search for : ";cin >> f;cout << endl;
     int l=0,h=n-1,m=(h+l)/2;in=-1;
     while(l!=m || h!=m)
@@ -60,6 +65,7 @@ int main()
     cout << "Enter container serial No : ";cin >> in;cout << endl;
     cout << "Container at index " << in << " is : " << x[in-1] << endl;cout << endl;break;
         case 5 :
+            //Exit Case
         cout << "Exiting the program" << endl;cout << endl;exit(0);break;
         default :
         cout << "Invalid Choice" << endl;cout << endl;break;
